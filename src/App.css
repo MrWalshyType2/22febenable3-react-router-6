@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+html {
+  font-size: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, *:before, *::after {
+  box-sizing: border-box;
+  font-size: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 { font-size: 3.2rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 2rem; }
+p, a { font-size: 1.6rem; line-height: 1.5; letter-spacing: 1px; }
+
+#navbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-left: 16px;
+}
+
+.nav-link, #toggle {
+  color: rgb(72, 72, 73);
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inherit;
+}
+
+.nav-link:hover, #toggle:hover {
+  background-color: whitesmoke;
+  color: rgb(72, 72, 73);
+}
+
+#toggle {
+  display: none;
+}
+
+header {
+  padding: 32px;
+  text-align: center;
+  background-color: rgb(72, 72, 73);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header > h1 {
+  font-size: 4rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main {
+  flex: 100%;
+  padding: 0 32px;
+}
+
+footer {
+  flex: 100%;
+  height: 64px;
+  background-color: rgb(72, 72, 73);
+  color: white;
+  text-align: center;
+}
+
+#data-table, form {
+  width: 100%;
+  text-align: left;
+  overflow: scroll;
+}
+
+#data-table > table {
+  width: 100%;
+  text-align: left;
+  overflow: scroll;
+}
+
+#banner {
+  flex: 100%;
+  padding: 32px;
+}
+
+.hide {
+  display: none;
+}
+
+/* A media query can be used to change CSS values dependent on various factors, usually a max-width or min-width of the
+viewport (screen).
+
+Media queries always start with `@media target and (properties) {
+
+}`
+
+- the properties are what we are checking for
+*/
+@media screen and (max-width: 1024px) {
+  aside {
+      flex: 25%;
   }
-  to {
-    transform: rotate(360deg);
+
+  main {
+      flex: 75%
   }
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+      display: none;
+  }
+
+  nav, .container, .row {
+      flex-direction: column;
+  }
+
+  nav {
+      padding-left: 0px;
+  }
+
+  .nav-link {
+      display: none;
+  }
+
+  #toggle {
+      display: block;
+      cursor: pointer;
+  }
+}
+
+.show {
+  display: inherit;
 }
